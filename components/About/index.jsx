@@ -31,7 +31,7 @@ const About = () => {
           >
             Linkedin
           </a>
-          <a className={styles.social_media__link} href="/">
+          <a className={styles.social_media__link} href="https://github.com/dalfonso75">
             Mi Curricum Vitae
           </a>
         </div>
