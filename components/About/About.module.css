@@ -11,7 +11,7 @@
 .about__role {
   font-size: 17em;
   font-weight: 400;
-  line-height: 0.9;
+  line-height: 0.8;
 }
 .about__specialized {
   position: relative;
@@ -52,12 +52,16 @@
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.5s ease;
-  -webkit-transition: background-color 0.5s ease;
-  -moz-transition: background-color 0.5s ease;
-  -ms-transition: background-color 0.5s ease;
-  -o-transition: background-color 0.5s ease;
+  transition: transform 0.5s ease;
+  -webkit-transition: transform 0.5s ease;
+  -moz-transition: transform 0.5s ease;
+  -ms-transition: transform 0.5s ease;
+  -o-transition: transform 0.5s ease;
 }
 .social_media__link:hover {
-  background-color: var(--background-color-hover-link);
+  transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
 }

@@ -1,0 +1,45 @@
+.wrapper_cursor {
+  mix-blend-mode: difference;
+  z-index: 1000;
+  position: fixed;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.secondary_cursor {
+  opacity: 0;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 100%;
+  transform: scale(0.2);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  -webkit-transition: transform 0.8s ease, opacity 0.8s ease;
+  -moz-transition: transform 0.8s ease, opacity 0.8s ease;
+  -ms-transition: transform 0.8s ease, opacity 0.8s ease;
+  -o-transition: transform 0.8s ease, opacity 0.8s ease;
+  -webkit-transform: scale(0.2);
+  -moz-transform: scale(0.2);
+  -ms-transform: scale(0.2);
+  -o-transform: scale(0.2);
+}
+.is_active {
+  opacity: 1;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+}
+.is_link {
+  transform: scale(5);
+  -webkit-transform: scale(5);
+  -moz-transform: scale(5);
+  -ms-transform: scale(5);
+  -o-transform: scale(5);
+  transition: transform 0.3s ease-in-out;
+  -webkit-transition: transform 0.3s ease-in-out;
+  -moz-transition: transform 0.3s ease-in-out;
+  -ms-transition: transform 0.3s ease-in-out;
+  -o-transition: transform 0.3s ease-in-out;
+}

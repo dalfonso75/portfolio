@@ -1,25 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { Work_Sans } from "next/font/google";
+import React, { useRef } from "react";
+
 import Header from "../Header";
+
+import useLocomotiveScroll from "@/hooks/useLocomotiveScroll";
+import CustomCursor from "../CustomCursor";
+
+import { Work_Sans } from "next/font/google";
+import styles from "./AppLayout.module.css";
 
 const font = Work_Sans({ subsets: ["latin"] });
 
 const AppLayout = ({ children }) => {
-  const [darkTheme, setDarkTheme] = useState(true);
-  useEffect(() => {
-    if (darkTheme) {
-      document.querySelector("body").classList.remove("light--theme");
-      document.querySelector("body").classList.add("dark--theme");
-    } else {
-      document.querySelector("body").classList.remove("dark--theme");
-      document.querySelector("body").classList.add("light--theme");
-    }
-  }, [darkTheme]);
+  const scrollRef = useRef(null);
+
+  useLocomotiveScroll({
+    ref: scrollRef,
+    smooth: true,
+    smoothMobile: true,
+  });
 
   return (
-    <main data-scroll-container className={font.className}>
-      <Header />
-      {children}
+    <main>
+      <CustomCursor />
+      <div
+        data-scroll-container
+        ref={scrollRef}
+        className={`${font.className} ${styles.c_applayout}`}
+      >
+        <Header />
+        {children}
+      </div>
     </main>
   );
 };
