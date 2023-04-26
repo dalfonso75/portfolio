@@ -1,8 +1,9 @@
 .c_about {
+  padding-top: 18em;
   margin-bottom: 5em;
 }
 .about__titles {
-  margin: 18em 0 5em 0;
+  margin-bottom: 5em;
   display: grid;
   align-items: flex-end;
   grid-template-columns: 8fr 4fr;

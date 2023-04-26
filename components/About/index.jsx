@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./About.module.css";
 const About = () => {
   return (
-    <div className={styles.c_about}>
+    <section className={styles.c_about} id="About">
       <div className={styles.about__titles}>
         <h1 className={styles.about__role}>Web Developer</h1>
         <p className={styles.about__specialized}>
@@ -31,12 +31,15 @@ const About = () => {
           >
             Linkedin
           </a>
-          <a className={styles.social_media__link} href="https://github.com/dalfonso75">
+          <a
+            className={styles.social_media__link}
+            href="https://github.com/dalfonso75"
+          >
             Mi Curricum Vitae
           </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

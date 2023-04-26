@@ -20,6 +20,9 @@ const CustomCursor = ({ speed = 0.1 }) => {
 
   useEffect(() => {
     function handleMouseMove(event) {
+      if (secondaryCursor?.current)
+        secondaryCursor.current.classList.add(styles.is_active);
+
       if (positionRef.current && mainCursor.current) {
         const { clientX, clientY } = event;
 
@@ -39,12 +42,8 @@ const CustomCursor = ({ speed = 0.1 }) => {
     };
   }, []);
 
-  // Cursor Enable/Disable
+  // Cursor Disable
   useEffect(() => {
-    const handleMouseEnable = () => {
-      if (secondaryCursor?.current)
-        secondaryCursor.current.classList.add(styles.is_active);
-    };
     const handleMouseDisable = () => {
       if (secondaryCursor?.current)
         secondaryCursor.current.classList.remove(styles.is_active);
@@ -52,12 +51,10 @@ const CustomCursor = ({ speed = 0.1 }) => {
 
     const body = document.querySelector("body");
     if (body) {
-      body.addEventListener("mouseenter", handleMouseEnable);
       body.addEventListener("mouseleave", handleMouseDisable);
     }
     return () => {
       if (body) {
-        body.removeEventListener("mouseenter", handleMouseEnable);
         body.addEventListener("mouseleave", handleMouseDisable);
       }
     };

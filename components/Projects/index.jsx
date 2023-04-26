@@ -4,7 +4,7 @@ import styles from "./Projects.module.css";
 import { PROJECTS } from "./data";
 function Projects() {
   return (
-    <div className={styles.c_projects}>
+    <section className={styles.c_projects} id="Work">
       <div className={styles.projects__text}>
         <h2 className={styles.projects__title}>Ultimos projectos</h2>
         <p className={styles.projects__about}>
@@ -13,11 +13,11 @@ function Projects() {
         </p>
       </div>
       <ul className={styles.projects__items}>
-        {PROJECTS.map((project, index) => (
-          <Project data={project} key={index} />
+        {PROJECTS.map((project) => (
+          <Project data={project} key={project.name} />
         ))}
       </ul>
-    </div>
+    </section>
   );
 }
 
