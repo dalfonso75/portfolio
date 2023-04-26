@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/compono": "^0.0.13",
+    "@studio-freight/react-lenis": "0.0.17",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "framer-motion": "10.12.4",

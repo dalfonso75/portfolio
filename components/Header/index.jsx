@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "@studio-freight/compono";
+
 import { motion } from "framer-motion";
 import styles from "./Header.module.css";
 
@@ -18,8 +20,9 @@ const Header = () => {
     <nav className={styles.c_header}>
       <ul className={styles.header__links}>
         {menuItems.map((item) => (
-          <li
+          <Link
             key={item}
+            href={`#${item.toLowerCase()}`}
             className={styles.header__link}
             onMouseEnter={() => setSelectedMenuItem(item)}
           >
@@ -46,7 +49,7 @@ const Header = () => {
             >
               {item}
             </motion.span>
-          </li>
+          </Link>
         ))}
       </ul>
     </nav>

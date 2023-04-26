@@ -4,7 +4,7 @@ import styles from "./Projects.module.css";
 import { PROJECTS } from "./data";
 function Projects() {
   return (
-    <section className={styles.c_projects} id="Work">
+    <section className={styles.c_projects} id="work">
       <div className={styles.projects__text}>
         <h2 className={styles.projects__title}>Ultimos projectos</h2>
         <p className={styles.projects__about}>

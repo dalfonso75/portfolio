@@ -33,6 +33,7 @@
   -ms-border-radius: 40px;
   -o-border-radius: 40px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .header__underline {
