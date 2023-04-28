@@ -1,21 +1,14 @@
-import React, { useState } from "react";
-import { Link } from "@studio-freight/compono";
-
+import React from "react";
+// import { Link } from "@studio-freight/compono";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import styles from "./Header.module.css";
+import useActiveSection from "./hook/useActiveSection";
 
-const menuItems = [
-  "About",
-  "Experience",
-  "Work",
-  "Education",
-  "Skills",
-  "Contact",
-];
+import styles from "./Header.module.css";
+import { menuItems } from "./constants/menuItems";
 
 const Header = () => {
-  const [selectedMenuItem, setSelectedMenuItem] = useState(null);
-
+  const activeSectionId = useActiveSection();
   return (
     <nav className={styles.c_header}>
       <ul className={styles.header__links}>
@@ -24,9 +17,8 @@ const Header = () => {
             key={item}
             href={`#${item.toLowerCase()}`}
             className={styles.header__link}
-            onMouseEnter={() => setSelectedMenuItem(item)}
           >
-            {item === selectedMenuItem && (
+            {item.toLowerCase() === activeSectionId && (
               <motion.div
                 className={styles.header__underline}
                 layoutId="underline"
@@ -39,7 +31,8 @@ const Header = () => {
             )}
             <motion.span
               animate={{
-                color: item === selectedMenuItem ? "#fff" : "#8c8c8c",
+                color:
+                  item.toLowerCase() === activeSectionId ? "#fff" : "#8c8c8c",
               }}
               transition={{
                 duration: 0.35,

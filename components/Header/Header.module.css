@@ -34,6 +34,8 @@
   -o-border-radius: 40px;
   cursor: pointer;
   text-decoration: none;
+  color: #8c8c8c;
+  z-index: 1;
 }
 
 .header__underline {
@@ -43,9 +45,10 @@
   height: 100%;
   background-color: #efefef17;
   border-radius: 40px;
-  z-index: -1;
+  z-index: 0;
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   -ms-border-radius: 40px;
   -o-border-radius: 40px;
+  will-change: transform;
 }
